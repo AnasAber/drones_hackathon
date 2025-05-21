@@ -1,0 +1,101 @@
+drone_id,status,base,assigned_ticket
+DR1,in_mission,Manila,T2
+DR2,in_mission,Manila,T4
+DR3,in_mission,Manila,T11
+DR4,in_mission,Manila,T16
+DR5,in_mission,Manila,T17
+DR6,in_mission,Manila,T28
+DR7,in_mission,Manila,T54
+DR8,in_mission,Manila,T59
+DR9,in_mission,Manila,T69
+DR10,in_mission,Manila,T70
+DR11,in_mission,Cebu,T1
+DR12,in_mission,Cebu,T9
+DR13,in_mission,Cebu,T35
+DR14,in_mission,Cebu,T46
+DR15,in_mission,Cebu,T47
+DR16,in_mission,Cebu,T48
+DR17,in_mission,Cebu,T60
+DR18,in_mission,Cebu,T66
+DR19,in_mission,Cebu,T72
+DR20,in_mission,Cebu,T73
+DR21,in_mission,Davao,T3
+DR22,in_mission,Davao,T23
+DR23,in_mission,Davao,T31
+DR24,in_mission,Davao,T38
+DR25,in_mission,Davao,T40
+DR26,in_mission,Davao,T76
+DR27,in_mission,Davao,T79
+DR28,available,Davao,
+DR29,available,Davao,
+DR30,available,Davao,
+DR31,in_mission,Baguio,T5
+DR32,in_mission,Baguio,T56
+DR33,in_mission,Baguio,T62
+DR34,in_mission,Baguio,T84
+DR35,in_mission,Baguio,T85
+DR36,available,Baguio,
+DR37,available,Baguio,
+DR38,available,Baguio,
+DR39,available,Baguio,
+DR40,available,Baguio,
+DR41,in_mission,Zamboanga,T6
+DR42,in_mission,Zamboanga,T8
+DR43,in_mission,Zamboanga,T34
+DR44,in_mission,Zamboanga,T42
+DR45,in_mission,Zamboanga,T45
+DR46,in_mission,Zamboanga,T57
+DR47,in_mission,Zamboanga,T58
+DR48,in_mission,Zamboanga,T68
+DR49,in_mission,Zamboanga,T75
+DR50,in_mission,Zamboanga,T96
+DR51,in_mission,Iloilo,T7
+DR52,in_mission,Iloilo,T14
+DR53,in_mission,Iloilo,T21
+DR54,in_mission,Iloilo,T22
+DR55,in_mission,Iloilo,T27
+DR56,in_mission,Iloilo,T29
+DR57,in_mission,Iloilo,T36
+DR58,in_mission,Iloilo,T44
+DR59,in_mission,Iloilo,T50
+DR60,available,Iloilo,
+DR61,in_mission,General Santos,T15
+DR62,in_mission,General Santos,T25
+DR63,in_mission,General Santos,T80
+DR64,in_mission,General Santos,T98
+DR65,available,General Santos,
+DR66,available,General Santos,
+DR67,available,General Santos,
+DR68,available,General Santos,
+DR69,available,General Santos,
+DR70,available,General Santos,
+DR71,in_mission,Tuguegarao,T12
+DR72,in_mission,Tuguegarao,T24
+DR73,in_mission,Tuguegarao,T51
+DR74,in_mission,Tuguegarao,T63
+DR75,in_mission,Tuguegarao,T65
+DR76,in_mission,Tuguegarao,T67
+DR77,in_mission,Tuguegarao,T74
+DR78,in_mission,Tuguegarao,T77
+DR79,in_mission,Tuguegarao,T81
+DR80,in_mission,Tuguegarao,T88
+DR81,in_mission,Legazpi,T10
+DR82,in_mission,Legazpi,T18
+DR83,in_mission,Legazpi,T19
+DR84,in_mission,Legazpi,T26
+DR85,in_mission,Legazpi,T30
+DR86,in_mission,Legazpi,T32
+DR87,in_mission,Legazpi,T33
+DR88,in_mission,Legazpi,T39
+DR89,in_mission,Legazpi,T41
+DR90,in_mission,Legazpi,T43
+DR91,in_mission,Puerto Princesa,T13
+DR92,in_mission,Puerto Princesa,T20
+DR93,in_mission,Puerto Princesa,T37
+DR94,in_mission,Puerto Princesa,T49
+DR95,in_mission,Puerto Princesa,T61
+DR96,in_mission,Puerto Princesa,T64
+DR97,in_mission,Puerto Princesa,T82
+DR98,in_mission,Puerto Princesa,T95
+DR99,available,Puerto Princesa,
+DR100,available,Puerto Princesa,
