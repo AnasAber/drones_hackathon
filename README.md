@@ -9,15 +9,15 @@ The simulation tests various operational scenarios, evaluates drone assignment s
 
 ## Key Features
 
-**'Scenario-Based Testing'**: Explore different configurations such as varying the number of drone bases and the number of drones per base to find the most effective setup.
+ * **Scenario-Based Testing**: Explore different configurations such as varying the number of drone bases and the number of drones per base to find the most effective setup.
 
-**'Dynamic Ticket Assignment'**: Assign crop monitoring tasks (tickets) to drones based on proximity and drone availability, simulating real-world operational constraints.
+ * **Dynamic Ticket Assignment**: Assign crop monitoring tasks (tickets) to drones based on proximity and drone availability, simulating real-world operational constraints.
 
-**'Comprehensive Analytics'**: Analyze key metrics including coverage efficiency, mission completion time estimates, drone utilization, and investment costs for each scenario.
+ * **Comprehensive Analytics**: Analyze key metrics including coverage efficiency, mission completion time estimates, drone utilization, and investment costs for each scenario.
 
-**'Interactive Visualizations'**: Generate detailed, interactive maps displaying drone bases, ticket locations with priority statuses, flight paths, and real-time analytics overlays.
+ * **Interactive Visualizations**: Generate detailed, interactive maps displaying drone bases, ticket locations with priority statuses, flight paths, and real-time analytics overlays.
 
-**'Multi-Day Simulation'**: Simulate multiple days of operations where unassigned tasks from previous days carry over, allowing analysis of long-term operational capacity and backlog clearance.
+ * **Multi-Day Simulation**: Simulate multiple days of operations where unassigned tasks from previous days carry over, allowing analysis of long-term operational capacity and backlog clearance.
 
 Data Export: Export detailed scenario results and ticket assignment data for further analysis and reporting.
 
