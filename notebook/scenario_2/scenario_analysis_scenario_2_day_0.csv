@@ -1,0 +1,2 @@
+scenario_name,total_bases,total_drones,drones_per_base,total_tickets,assigned_tickets,coverage_efficiency_percent,theoretical_completion_hours,total_drone_investment_usd,base_utilization
+"Scenario 2: Few bases, many drones",5,500,100.0,2499,500,20.00800320128051,0.0,15000000,"{'Labbi Camp': 0.0, 'Villa Remedios': 0.0, 'Concong': 0.0, 'Upas': 0.0, 'Silauan Sur': 0.0}"

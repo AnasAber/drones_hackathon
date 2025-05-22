@@ -5,11 +5,14 @@ import pandas as pd
 import numpy as np
 import time
 import math
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import List, Dict, Tuple, Optional
 import json
 from dataclasses import dataclass
 from enum import Enum
+
+global total_time
+total_time = 0
 
 # ----- Constants and Configuration -----
 
@@ -20,8 +23,8 @@ class DroneModel(Enum):
 class DroneSpecs:
     model: DroneModel
     max_flight_time_minutes: int = 480  # 8 hours
-    cruise_speed_kmh: int = 80  # Estimated cruise speed
-    mission_time_minutes: int = 10  # Time to complete EXAMINE mission
+    cruise_speed_kmh: int = 90  # Estimated cruise speed
+    mission_time_minutes: int = 5  # Time to complete EXAMINE mission
     cost_usd: int = 30000
 
 # ----- Enhanced Data Classes -----
@@ -104,6 +107,7 @@ class Drone:
             self.mission_start_time = datetime.now()
             ticket.assign(self)
             return True
+        
         return False
     
     def complete_mission(self) -> Dict:
@@ -127,9 +131,11 @@ class Drone:
             "distance_km": distance_flown,
             "flight_time_minutes": flight_time + self.specs.mission_time_minutes,
             "mission_start": self.mission_start_time,
-            "mission_end": datetime.now()
+            "mission_end": self.mission_start_time + flight_time + self.specs.mission_time_minutes # datetime.now()
         }
-        
+
+        total_time += mission_stats["mission_end"] - mission_stats["mission_end"]
+    
         # Update drone state
         self.status = "available"
         self.total_distance_flown += distance_flown
@@ -185,12 +191,11 @@ class DroneBase:
 
 class Ticket:
     def __init__(self, sample_id: str, latitude: float, longitude: float, 
-                 ndvi: float, crop_type: str = "Unknown"):
+                 ndvi: float):
         self.sample_id = sample_id
         self.latitude = latitude
         self.longitude = longitude
         self.ndvi = ndvi
-        self.crop_type = crop_type
         self.assigned = False
         self.assigned_drone: Optional[Drone] = None
         self.priority = self._calculate_priority()
@@ -223,7 +228,7 @@ class AssignmentStrategy(Enum):
     PRIORITY_BASED = "priority_based"
 
 class TicketAssignmentSystem:
-    def __init__(self, strategy: AssignmentStrategy = AssignmentStrategy.ECONOMIC_OPTIMAL):
+    def __init__(self, strategy: AssignmentStrategy = AssignmentStrategy.NEAREST_BASE):
         self.strategy = strategy
         self.assignment_history = []
         
@@ -248,7 +253,7 @@ class TicketAssignmentSystem:
             if success:
                 assignments["successful"] += 1
                 assignments["details"].append({
-                    "ticket_id": ticket.sample_id,
+                    "ticket_id": ticket.ndvi+uuid.uuid3(ticket.sample_id),
                     "assigned_to": ticket.assigned_drone.drone_id,
                     "base": ticket.assigned_drone.base.city_name
                 })
@@ -405,7 +410,6 @@ def load_crop_targets(filepath: str, ndvi_threshold: float = 0.5) -> List[Ticket
                 latitude=float(row[lat_col]),
                 longitude=float(row[lng_col]),
                 ndvi=float(row[ndvi_col]),
-                crop_type=str(row[crop_col]) if crop_col else "Unknown"
             )
             tickets.append(ticket)
         
@@ -419,28 +423,6 @@ def load_crop_targets(filepath: str, ndvi_threshold: float = 0.5) -> List[Ticket
         print(f"❌ Error loading crop targets: {e}, using generated tickets")
         return e
 
-def create_default_bases() -> List[DroneBase]:
-    """sample of the bases for testing"""
-    base_locations = [
-        ("Manila", 14.5995, 120.9842),
-        ("Cebu", 10.3157, 123.8854),
-        ("Davao", 7.1907, 125.4553),
-        ("Baguio", 16.4023, 120.5960),
-        ("Zamboanga", 6.9214, 122.0790),
-        ("Iloilo", 10.7202, 122.5621),
-        ("General Santos", 6.1164, 125.1716),
-        ("Tuguegarao", 17.6131, 121.7269),
-        ("Legazpi", 13.1391, 123.7438),
-        ("Puerto Princesa", 9.7392, 118.7353)
-    ]
-    
-    bases = []
-    for name, lat, lon in base_locations:
-        base = DroneBase(name, lat, lon)
-        bases.append(base)
-    
-    return bases
-
 
 # ----- Analytics System -----
 
@@ -448,16 +430,16 @@ class AnalyticsEngine:
     def __init__(self):
         self.simulation_data = []
         self.mission_history = []
-        
+
     def analyze_scenario(self, bases: List[DroneBase], tickets: List[Ticket], 
                         scenario_name: str) -> Dict:
         """Analyze a specific scenario configuration"""
         total_drones = sum(len(base.drones) for base in bases)
         total_tickets = len([t for t in tickets if not t.assigned])
         assigned_tickets = len([t for t in tickets if t.assigned])
-        
+
         # Calculate theoretical completion time
-        avg_mission_time = 60  # minutes (flight + mission time)
+        avg_mission_time = total_time # minutes (flight + mission time)
         theoretical_min_time = (total_tickets * avg_mission_time) / total_drones
         
         # Calculate coverage efficiency
@@ -546,7 +528,6 @@ def create_enhanced_visualization(bases: List[DroneBase], tickets: List[Ticket],
         <b>Ticket {ticket.sample_id}</b><br>
         NDVI: {ticket.ndvi:.3f}<br>
         Priority: {ticket.priority}<br>
-        Crop: {ticket.crop_type}<br>
         Status: {'Assigned' if ticket.assigned else 'Unassigned'}
         """
         
@@ -605,14 +586,14 @@ def run_comprehensive_simulation():
     
     scenarios_to_test = [
         {"name": "Scenario 1: Balanced", "drones_per_base": 10},
-        {"name": "Scenario 2: Few bases, many drones", "bases_to_use": 5, "drones_per_base": 20},
+        {"name": "Scenario 2: Few bases, many drones", "bases_to_use": 5, "drones_per_base": 100},
         {"name": "Scenario 3: Many bases, few drones", "drones_per_base": 3},
     ]
-    
+
     scenario_results = []
     
     for scenario_config in scenarios_to_test:
-        print(f"\n🔬 Testing {scenario_config['name']}")
+        print(f"\n Testing {scenario_config['name']}")
         print("-" * 40)
         
         # Setup scenario
@@ -633,7 +614,7 @@ def run_comprehensive_simulation():
             ticket.assigned_drone = None
         
         # Run assignment
-        assignment_system = TicketAssignmentSystem(AssignmentStrategy.NEAREST_BASE)
+        assignment_system = TicketAssignmentSystem(AssignmentStrategy.PRIORITY_BASED)
         print(f"We got assignment system running {assignment_system}")
         assignment_results = assignment_system.assign_tickets(scenario_bases, tickets)
         
@@ -687,7 +668,6 @@ def export_comprehensive_results(scenario_results: List[Dict], comparison: Dict,
             "latitude": ticket.latitude,
             "longitude": ticket.longitude,
             "ndvi": ticket.ndvi,
-            "crop_type": ticket.crop_type,
             "priority": ticket.priority,
             "assigned": ticket.assigned,
             "assigned_drone": ticket.assigned_drone.drone_id if ticket.assigned_drone else None,
