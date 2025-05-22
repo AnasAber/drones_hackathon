@@ -25,25 +25,25 @@ Data Export: Export detailed scenario results and ticket assignment data for fur
 
 This simulation tool is designed to assist agricultural planners and drone operations managers by:
 
- 1- Evaluating different drone deployment strategies under realistic conditions.
+ * Evaluating different drone deployment strategies under realistic conditions.
 
- 2- Identifying bottlenecks and limitations in drone availability and ticket coverage.
+ * Identifying bottlenecks and limitations in drone availability and ticket coverage.
 
- 3- Providing data-driven insights to optimize drone fleet size and base locations.
+ * Providing data-driven insights to optimize drone fleet size and base locations.
 
- 4- Supporting informed decision-making to improve monitoring efficiency and reduce operational costs.
+ * Supporting informed decision-making to improve monitoring efficiency and reduce operational costs.
 
 ## How It Works
 
-1-Loading Data: Drone bases and crop monitoring tickets are loaded from prepared datasets, representing real-world geographic locations and crop health indicators.
+ * Loading Data: Drone bases and crop monitoring tickets are loaded from prepared datasets, representing real-world geographic locations and crop health indicators.
 
-2-Configuring Scenarios: Users define scenarios by specifying parameters such as the number of drones per base or limiting the number of active bases.
+ * Configuring Scenarios: Users define scenarios by specifying parameters such as the number of drones per base or limiting the number of active bases.
 
-3-Running Simulations: For each scenario, the system assigns tickets to drones, calculates analytics, and produces interactive maps showing the operational status and coverage.
+ * Running Simulations: For each scenario, the system assigns tickets to drones, calculates analytics, and produces interactive maps showing the operational status and coverage.
 
-4-Multi-Day Operations: Unassigned tickets from a simulation day are carried forward to the next day, simulating continuous operations until all tickets are addressed or no further progress can be made.
+ * Multi-Day Operations: Unassigned tickets from a simulation day are carried forward to the next day, simulating continuous operations until all tickets are addressed or no further progress can be made.
 
-Results and Reporting: Detailed reports on drone utilization, task assignments, and scenario comparisons are generated and saved for review.
+ * Results and Reporting: Detailed reports on drone utilization, task assignments, and scenario comparisons are generated and saved for review.
 
 ### Intended Users
 
