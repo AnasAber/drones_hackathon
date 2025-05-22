@@ -25,13 +25,13 @@ Data Export: Export detailed scenario results and ticket assignment data for fur
 
 This simulation tool is designed to assist agricultural planners and drone operations managers by:
 
-1- Evaluating different drone deployment strategies under realistic conditions.
+ 1- Evaluating different drone deployment strategies under realistic conditions.
 
-2- Identifying bottlenecks and limitations in drone availability and ticket coverage.
+ 2- Identifying bottlenecks and limitations in drone availability and ticket coverage.
 
-3- Providing data-driven insights to optimize drone fleet size and base locations.
+ 3- Providing data-driven insights to optimize drone fleet size and base locations.
 
-4- Supporting informed decision-making to improve monitoring efficiency and reduce operational costs.
+ 4- Supporting informed decision-making to improve monitoring efficiency and reduce operational costs.
 
 ## How It Works
 
