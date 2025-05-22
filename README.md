@@ -47,18 +47,18 @@ Results and Reporting: Detailed reports on drone utilization, task assignments, 
 
 ### Intended Users
 
-Agricultural planners and researchers focused on precision farming.
+ * Agricultural planners and researchers focused on precision farming.
 
-Drone fleet managers and logistics coordinators.
+ * Drone fleet managers and logistics coordinators.
 
-Developers and data scientists working on drone operations optimization.
+ * Developers and data scientists working on drone operations optimization.
 
-Anyone interested in modeling and analyzing drone-based delivery or monitoring systems.
+ * Anyone interested in modeling and analyzing drone-based delivery or monitoring systems.
 
 ### Requirements
- *A Python environment with standard data analysis and visualization libraries.
+ * A Python environment with standard data analysis and visualization libraries.
 
- *Data inputs including drone base locations and crop target information.
+ * Data inputs including drone base locations and crop target information.
 
- *Basic understanding of drone operations and logistics simulation concepts.
+ * Basic understanding of drone operations and logistics simulation concepts.
 
