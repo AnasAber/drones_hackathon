@@ -1,27 +1,27 @@
 # Drone Swarm Logistics Simulation
 
 
-### Project Overview
+## Project Overview
 
 This project simulates the operation of a drone swarm logistics system designed for agricultural monitoring and crop health analysis. It focuses on optimizing drone deployment from multiple bases to efficiently cover crop monitoring tasks spread across a region.
 
 The simulation tests various operational scenarios, evaluates drone assignment strategies, and provides detailed analytics to help improve mission success rates, resource utilization, and overall system efficiency.
 
-### Key Features
+## Key Features
 
-Scenario-Based Testing: Explore different configurations such as varying the number of drone bases and the number of drones per base to find the most effective setup.
+**'Scenario-Based Testing'**: Explore different configurations such as varying the number of drone bases and the number of drones per base to find the most effective setup.
 
-Dynamic Ticket Assignment: Assign crop monitoring tasks (tickets) to drones based on proximity and drone availability, simulating real-world operational constraints.
+**'Dynamic Ticket Assignment'**: Assign crop monitoring tasks (tickets) to drones based on proximity and drone availability, simulating real-world operational constraints.
 
-Comprehensive Analytics: Analyze key metrics including coverage efficiency, mission completion time estimates, drone utilization, and investment costs for each scenario.
+**'Comprehensive Analytics'**: Analyze key metrics including coverage efficiency, mission completion time estimates, drone utilization, and investment costs for each scenario.
 
-Interactive Visualizations: Generate detailed, interactive maps displaying drone bases, ticket locations with priority statuses, flight paths, and real-time analytics overlays.
+**'Interactive Visualizations'**: Generate detailed, interactive maps displaying drone bases, ticket locations with priority statuses, flight paths, and real-time analytics overlays.
 
-Multi-Day Simulation: Simulate multiple days of operations where unassigned tasks from previous days carry over, allowing analysis of long-term operational capacity and backlog clearance.
+**'Multi-Day Simulation'**: Simulate multiple days of operations where unassigned tasks from previous days carry over, allowing analysis of long-term operational capacity and backlog clearance.
 
 Data Export: Export detailed scenario results and ticket assignment data for further analysis and reporting.
 
-### Purpose and Benefits
+## Purpose and Benefits
 
 This simulation tool is designed to assist agricultural planners and drone operations managers by:
 
@@ -45,7 +45,7 @@ This simulation tool is designed to assist agricultural planners and drone opera
 
  * Results and Reporting: Detailed reports on drone utilization, task assignments, and scenario comparisons are generated and saved for review.
 
-### Intended Users
+## Intended Users
 
  * Agricultural planners and researchers focused on precision farming.
 
@@ -55,7 +55,7 @@ This simulation tool is designed to assist agricultural planners and drone opera
 
  * Anyone interested in modeling and analyzing drone-based delivery or monitoring systems.
 
-### Requirements
+## Requirements
  * A Python environment with standard data analysis and visualization libraries.
 
  * Data inputs including drone base locations and crop target information.
